@@ -1,6 +1,7 @@
 {
   "name": "toko_sepatu_online",
-  "homepage" : "https://toko-sepatu-online.netlify.app",
+  "homepage": "https://toko-sepatu-online.netlify.app",
+  "main" : "functions/server.js",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -33,7 +34,7 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "start-server": "craco build && NODE_ENV=production node server/config.js"
+    "start-server": "craco build && NODE_ENV=production node server/config.js && netlify-lambda build express"
   },
   "eslintConfig": {
     "extends": [
@@ -55,7 +56,10 @@
   },
   "devDependencies": {
     "autoprefixer": "^9",
+    "netlify-lambda": "^2.0.14",
+    "nodemon": "^2.0.12",
     "postcss": "^7",
+    "serverless-http": "^2.7.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }
 }
