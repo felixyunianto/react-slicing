@@ -3,7 +3,7 @@ import { renderToString } from "react-dom/server";
 import { matchPath } from "react-router";
 import { resolve } from "path";
 import { readFile } from "fs";
-import configureStore from "../redux/store";
+import configureStore from "../src/redux/store";
 
 const initialState = {
   allProducts: [],
@@ -11,7 +11,7 @@ const initialState = {
   bestSellings: [],
 };
 
-import App from "../App";
+import App from "../src/App";
 
 export function render(routes) {
   return (req, res, next) => {
@@ -24,7 +24,7 @@ export function render(routes) {
     const is404 = req._possible404;
 
     if (match || is404) {
-      const filePath = resolve(__dirname, "../../", "build", "index.html");
+      const filePath = resolve(__dirname, "..", "build", "index.html");
 
       readFile(filePath, "utf8", (err, htmlData) => {
         if (err) {

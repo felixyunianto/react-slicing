@@ -10,8 +10,8 @@ const app = express();
 
 app.get("*", render(routes));
 
-app.use(express.static(resolve(__dirname, "../../build")));
-app.use(express.static(resolve(__dirname, "../../public")));
+app.use(express.static(resolve(__dirname, "../build")));
+app.use(express.static(resolve(__dirname, "../public")));
 
 app.use(render(routes));
 
