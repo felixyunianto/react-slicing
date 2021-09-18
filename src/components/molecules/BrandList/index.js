@@ -5,14 +5,14 @@ import { FiChevronRight } from "react-icons/fi";
 const BrandList = () => {
   return (
     <div className="w-9/12 hidden mobile:hidden tablet:hidden laptop:flex desktop:flex gap-3">
-      <BrandItem type="all">ALL BRANDS</BrandItem>
-      <BrandItem>Avali</BrandItem>
-      <BrandItem>Zetta</BrandItem>
-      <BrandItem>Barefoot</BrandItem>
-      <BrandItem>Perindu</BrandItem>
-      <BrandItem>Shoelovin</BrandItem>
-      <BrandItem>Misletoe</BrandItem>
-      <BrandItem type="more">More Brands <FiChevronRight/></BrandItem>
+      <BrandItem padding="px-3 py-2.5" type="all">ALL BRANDS</BrandItem>
+      <BrandItem padding="px-3 py-2.5">Avali</BrandItem>
+      <BrandItem padding="px-3 py-2.5">Zetta</BrandItem>
+      <BrandItem padding="px-3 py-2.5">Barefoot</BrandItem>
+      <BrandItem padding="px-3 py-2.5">Perindu</BrandItem>
+      <BrandItem padding="px-3 py-2.5">Shoelovin</BrandItem>
+      <BrandItem padding="px-3 py-2.5">Misletoe</BrandItem>
+      <BrandItem padding="px-3 py-2.5" type="more">More Brands <FiChevronRight/></BrandItem>
     </div>
   );
 };

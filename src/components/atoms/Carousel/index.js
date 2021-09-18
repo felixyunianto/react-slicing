@@ -55,7 +55,6 @@ const Carousel = (props) => {
                   alt="carousel"
                   className="object-cover rounded-xl"
                 />
-                ;
               </div>
             );
           })}

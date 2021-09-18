@@ -1,12 +1,26 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import HomePage from './pages/HomePage';
+import { Provider } from 'react-redux';
+import { StaticRouter } from 'react-router';
+import Routes from './confg/routes';
+import { BrowserRouter } from 'react-router-dom';
 
-function App() {
+function App(props) {
   return (
-    <div>
-      <HomePage />
-    </div>
+    <Provider store={props.store}>
+      {
+        props.location ?
+        (
+          <StaticRouter location={props.location} context={{}}>
+            <Routes store={props.store}/>
+          </StaticRouter>
+        ) : (
+          <BrowserRouter>
+            <Routes />
+          </BrowserRouter>
+        )
+      }
+    </Provider>
   );
 }
 

@@ -34,6 +34,9 @@ module.exports = {
         secondary: "#080C1C",
         third: "#E9F0F7",
       },
+      boxShadow: {
+        left : '-7px 0px 5px -2px rgba(0,0,0,0.5)'
+      }
     },
   },
   variants: {

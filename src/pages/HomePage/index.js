@@ -1,11 +1,6 @@
-import React, { useState } from "react";
-import {
-  banner,
-  bannerNewComing,
-  carouselOne,
-  carouselTwo,
-  productJson,
-} from "../../assets";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router";
 import {
   BannerContent,
   CardList,
@@ -17,19 +12,39 @@ import {
   Navbar,
   Sidebar,
 } from "../../components";
+import { fetchBanner, fetchBannerNewComming, fetchBestSelling, fetchCarouselOne, fetchCarouselTwo, fetchNewProduct } from "../../redux/actions";
 
 const HomePage = () => {
+  const dispatch = useDispatch()
+  const history = useHistory()
+
   const [navbarToggle, setNavbarToggle] = useState(false);
   const [sidebarToggle, setSidebarToggle] = useState(false);
+  const newestProducts = useSelector((state) => state.productReducers.newestProducts);
+  const bestSellings = useSelector((state) => state.productReducers.bestSellings);
 
-  const carouselData = {
-    one: [carouselOne, carouselTwo],
-    two: [carouselTwo, carouselOne],
-  };
+  const imageCarouselOne = useSelector((state) => state.imageReducers.carouselOne)
+  const imageCarouselTwo = useSelector((state) => state.imageReducers.carouselTwo)
+  const imageBannerCarousel = useSelector((state) => state.imageReducers.bannerCarousel);
+  const imageBanner = useSelector((state) => state.imageReducers.banner)
 
-  const carouselBannerNewComing = [bannerNewComing, bannerNewComing];
+  const movePageToProductDetail = (data) => {
+    history.push({
+      pathname : '/product-detail',
+      state : {
+        product: data
+      }
+    })
+  }
 
-  // const 
+  useEffect(() => {
+    dispatch(fetchNewProduct())
+    dispatch(fetchBestSelling())
+    dispatch(fetchCarouselOne())
+    dispatch(fetchCarouselTwo())
+    dispatch(fetchBannerNewComming())
+    dispatch(fetchBanner())
+  }, [dispatch])
 
   return (
     <div className="box-border bg-primary w-full h-full">
@@ -48,21 +63,19 @@ const HomePage = () => {
           <Sidebar sidebarToggle={sidebarToggle} />
           <Content>
             <CarouselContent>
-              <Carousel type="promo" data={carouselData.one} />
-              <Carousel type="promo" data={carouselData.two} />
+              <Carousel type="promo" data={imageCarouselOne} />
+              <Carousel type="promo" data={imageCarouselTwo} />
             </CarouselContent>
-            <CardList data={productJson} />
+            <CardList data={bestSellings} onPress={(data) => movePageToProductDetail(data)}/>
             <div className="pt-5">
               <CarouselContent>
-                <Carousel type="new-coming" data={carouselBannerNewComing} />
+                <Carousel type="new-coming" data={imageBannerCarousel}/>
               </CarouselContent>
             </div>
-            <CardList data={productJson.sort((a,b) => {
-              return new Date(a.created_at) - new Date(b.created_at)
-            })} />
+            <CardList data={newestProducts} />
           </Content>
         </div>
-        <BannerContent image={banner} />
+        <BannerContent image={imageBanner} />
         <Footer />
       </div>
     </div>

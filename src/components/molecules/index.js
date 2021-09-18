@@ -8,6 +8,12 @@ import CarouselContent from "./CarouselContent";
 import CardList from "./CardList";
 import BannerContent from "./BannerContent";
 import Footer from "./Footer";
+import HeroProductDetail from "./HeroProductDetail";
+import Thumbnail from "./Thumbnail";
+import Size from "./Size";
+import Color from "./Color";
+import Quantity from "./Quantity";
+import Testimonial from "./Testimonial";
 
 export {
   Navbar,
@@ -19,5 +25,11 @@ export {
   CarouselContent,
   CardList,
   BannerContent,
-  Footer
+  Footer,
+  HeroProductDetail,
+  Thumbnail,
+  Size,
+  Color,
+  Quantity,
+  Testimonial
 };
