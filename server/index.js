@@ -4,7 +4,7 @@ import { resolve } from "path";
 const PORT = 3000;
 
 import { render } from "./react-renderer";
-const routes = ["/", "/product-detail"];
+const routes = ["/", "/product-list","/product-detail"];
 
 const app = express();
 

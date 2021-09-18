@@ -1536,11 +1536,11 @@
         ],
         "color": { "id": 7, "name": "Red", "rgb": "#e50b26" },
         "sizes": [
-          { "id": 22523, "size": 26, "stock": 0, "product_color": null },
-          { "id": 22524, "size": 27, "stock": 0, "product_color": null },
-          { "id": 22525, "size": 28, "stock": 0, "product_color": null },
-          { "id": 22526, "size": 29, "stock": 0, "product_color": null },
-          { "id": 22527, "size": 30, "stock": 0, "product_color": null }
+          { "id": 22523, "size": 24, "stock": 0, "product_color": null },
+          { "id": 22524, "size": 25, "stock": 0, "product_color": null },
+          { "id": 22525, "size": 26, "stock": 0, "product_color": null },
+          { "id": 22526, "size": 27, "stock": 0, "product_color": null },
+          { "id": 22527, "size": 28, "stock": 0, "product_color": null }
         ]
       }
     ],

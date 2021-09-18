@@ -4,7 +4,7 @@ import { Banner } from '../..'
 const BannerContent = (props) => {
     const {image} = props
     return (
-        <div className="w-full px-16 pt-2 pb-5">
+        <div className="w-full px-4 laptop:px-16 desktop:px-16">
             <Banner image={image} />
         </div>
     )

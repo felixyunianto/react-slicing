@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { HomePage, NoMatch, Product } from "../../pages";
+import { HomePage, NoMatch, Product, ProductList } from "../../pages";
 import { fetchBestSelling, fetchNewProduct } from "../../redux/actions";
 
 const Routes = ({ store }) => {
@@ -15,6 +15,13 @@ const Routes = ({ store }) => {
           }
 
           return <HomePage />;
+        }}
+        exact
+      />
+      <Route
+        path="/product-list"
+        render={() => {
+          return <ProductList />;
         }}
         exact
       />

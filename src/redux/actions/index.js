@@ -1,10 +1,11 @@
 import { banner, bannerNewComing, carouselOne, carouselTwo, productJson } from "../../assets";
 
 export const fetchAllProduct = () => {
+  const product = productJson.filter((product) => product.total_stock > 0)
   return (dispatch) => {
     return dispatch({
       type: "FETCH_ALL_PRODUCT",
-      payload: productJson,
+      payload: product,
     });
   };
 };

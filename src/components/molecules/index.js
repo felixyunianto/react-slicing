@@ -14,6 +14,7 @@ import Size from "./Size";
 import Color from "./Color";
 import Quantity from "./Quantity";
 import Testimonial from "./Testimonial";
+import Filter from "./Filter";
 
 export {
   Navbar,
@@ -31,5 +32,6 @@ export {
   Size,
   Color,
   Quantity,
-  Testimonial
+  Testimonial,
+  Filter
 };
