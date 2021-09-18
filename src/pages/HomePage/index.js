@@ -72,7 +72,7 @@ const HomePage = () => {
                 <Carousel type="new-coming" data={imageBannerCarousel}/>
               </CarouselContent>
             </div>
-            <CardList data={newestProducts} />
+            <CardList data={newestProducts} onPress={(data) => movePageToProductDetail(data)}/>
           </Content>
         </div>
         <BannerContent image={imageBanner} />
