@@ -1,0 +1,5 @@
+{
+    "product" : ["All", "Men", "Women", "Kid"],
+    "category" : ["All", "Boots", "Flats", "Heels", "Loafers", "Pantofels", "Sandals", "School Shoes"],
+    "information" : ["About Us", "FAQ", "Shipping"]
+}
