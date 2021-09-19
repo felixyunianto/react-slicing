@@ -6,9 +6,11 @@ const PORT = 3000;
 import { render } from "./react-renderer";
 const routes = ["/", "/product-list","/product-detail"];
 
+const router = express.Router();
+
 const app = express();
 
-app.get("*", render(routes));
+router.get("*", render(routes));
 
 app.use(express.static(resolve(__dirname, "../build")));
 app.use(express.static(resolve(__dirname, "../public")));

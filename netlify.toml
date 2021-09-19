@@ -1,14 +1,7 @@
 [build]
-  command = "yarn build"
-  publish = "build/static"
-  functions = "build"
-
-[[redirects]]
-  from = "/static/*"
-  to = "/:splat"
-  status = 200
-
+  functions = "functions"
+  publish = "build"
 [[redirects]]
   from = "/*"
-  to = "/.netlify/functions/server"
+  to = "/index.html"
   status = 200

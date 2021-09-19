@@ -44,9 +44,7 @@ export function render(routes) {
 
         const store = configureStore(initialState);
 
-        const jsx = <App store={store} location={location} />;
-
-        const reactDom = renderToString(jsx);
+        const reactDom = renderToString(<App store={store} location={location} />);
 
         return res.end(
           htmlData
